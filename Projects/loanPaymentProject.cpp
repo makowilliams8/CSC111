@@ -35,12 +35,12 @@ int main()
     total_paid = payment * N;
     interest_paid = total_paid - L;
 
-    cout << "Loan amount: " << L << endl;
-    cout << "Monthly Interest Rate: " << monthly_rate << "%" << endl;
-    cout << "Number of Payments: " << N << endl;
-    cout << "Monthly Payments: $" << payment << endl;
-    cout << "Amount Paid Back : $" << total_paid << endl;
-    cout << "Interest Paid: $" << interest_paid  << endl;
+    cout << "Loan amount:" << setw(13) << "$" << setw(10) << right << fixed << L << endl;
+    cout << "Monthly Interest Rate:    " << setw(8) << right << fixed << monthly_rate << "%" << endl;
+    cout << "Number of Payments:       " << setw(9) << right << fixed << N << endl;
+    cout << "Monthly Payments:" << setw(8) << "$" << setw(10) << right << fixed << payment << endl;
+    cout << "Amount Paid Back:" << setw(8) << "$" << setw(10) << right << fixed << total_paid << endl;
+    cout << "Interest Paid:" << setw(11) << "$" << setw(10) << right << fixed << interest_paid  << endl;
 
     return 0;
 }
