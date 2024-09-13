@@ -1,7 +1,7 @@
 // Name: Mako Williams
-// Date: 9/10/2024
+// Date: 9/12/2024
 // Purpose: This program is used to calculate the monthly payments
-//         based on the loan amount, interest rate, and number of payments
+//          based on the loan amount, interest rate, and number of payments
 
 
 #include <iostream>
@@ -20,6 +20,7 @@ int main()
 
     cout << fixed << setprecision(2);
 
+    //Inputs for loan amount, interest rate, and number of payments
     cout << "Please enter the amount of the loan. \n" ;
     cin >> L;
 
@@ -30,11 +31,12 @@ int main()
     cout << "Please enter the number of payments. \n";
     cin >> N;
 
-    
+    //Calculating monthy payment, interest, and total repayment with interest
     payment = L * (monthly_rate/100 * pow(1 + monthly_rate/100, N)) / (pow(1 + monthly_rate/100, N) - 1);
     total_paid = payment * N;
     interest_paid = total_paid - L;
 
+    //Loan Report
     cout << "Loan amount:" << setw(13) << "$" << setw(10) << right << fixed << L << endl;
     cout << "Monthly Interest Rate:    " << setw(8) << right << fixed << monthly_rate << "%" << endl;
     cout << "Number of Payments:       " << setw(9) << right << fixed << N << endl;
