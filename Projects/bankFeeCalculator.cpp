@@ -1,3 +1,8 @@
+//Name: Mako Williams
+//Date: 9/19/2024
+//Purpose: Calculate the fees charged based on the number of checks needed and
+//          the starting balance.
+
 #include<iostream>
 #include <iomanip>
 using namespace std;
