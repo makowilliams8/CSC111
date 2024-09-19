@@ -18,13 +18,14 @@ int main()
     cout << "Please enter the number of checks: ";
     cin >> num_checks;
 
-
+    //Determine if low balance fee is added 
     if (starting_balance < 200) {
         low_balance_fee = 10;
     } else {
         low_balance_fee = 0;
     }
 
+    //Determine which fee is added based on the number of checks
     if (num_checks < 5) {
         check_fee = num_checks * 0.15;
     } else if (num_checks <= 10) {
