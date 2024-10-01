@@ -1,7 +1,7 @@
 {
 	"cpp snippets": 
     { 
-        "prefix" : "boilerplate", 
+        "prefix" : "start", 
                    "body" : [ 
                        "#include<iostream>", 
                        "using namespace std;", 
