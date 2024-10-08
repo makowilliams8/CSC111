@@ -2,50 +2,55 @@
 using namespace std;
 
 int main() {
-  int num_floors, num_rooms_on_floor, num_occupied_rooms;
-  int total_rooms = 0, total_occupied_rooms = 0;
+  int floors;
+  int rooms;
+  int occupied;
+  int total_rooms = 0;
+  int total_occupied = 0;
 
-  // Input validation for number of floors
+  //Input validation for number of floors
   do {
-    cout << "Enter the number of floors in the hotel: ";
-    cin >> num_floors;
-    if (num_floors < 1) {
-      cout << "Invalid input. Please enter a number of floors greater than or equal to 1.\n";
+    cout << "How many floors does the hotel have?: ";
+    cin >> floors;
+    if (floors < 1) {
+      cout << "Invalid input. Please enter a number greater than or equal to 1. \n";
     }
-  } while (num_floors < 1);
+  }
+  while (floors < 1);
 
-  // Loop through each floor
-  for (int floor = 1; floor <= num_floors; ++floor) {
+  // Looping through each floor
+  for (int floor = 1; floor <= floors; ++floor) {
     // Input validation for number of rooms on the floor
     do {
       cout << "Enter the number of rooms on floor " << floor << ": ";
-      cin >> num_rooms_on_floor;
-      if (num_rooms_on_floor < 10) {
-        cout << "Invalid input. Please enter a number of rooms greater than or equal to 10.\n";
+      cin >> rooms;
+      if (rooms < 10) {
+        cout << "Invalid input. Please enter a number of rooms greater than or equal to 10." << endl;
       }
-    } while (num_rooms_on_floor < 10);
+    } while (rooms < 10);
 
     // Input validation for number of occupied rooms
     do {
       cout << "Enter the number of occupied rooms on floor " << floor << ": ";
-      cin >> num_occupied_rooms;
-      if (num_occupied_rooms > num_rooms_on_floor) {
-        cout << "Invalid input. The number of occupied rooms cannot exceed the number of rooms on the floor.\n";
+      cin >> occupied;
+      if (occupied > rooms) {
+        cout << "Invalid input. The number of occupied rooms cannot exceed the number of rooms on the floor." << endl;
       }
-    } while (num_occupied_rooms > num_rooms_on_floor);
+    } while (occupied > rooms);
 
     // Update total rooms and occupied rooms
-    total_rooms += num_rooms_on_floor;
-    total_occupied_rooms += num_occupied_rooms;
+    total_rooms += rooms;
+    total_occupied += occupied;
   }
 
-  // Calculate and display occupancy rate
-  int num_unoccupied_rooms = total_rooms - total_occupied_rooms;
-  int occupancy_rate = (total_occupied_rooms * 100) / total_rooms;
+  // Calculating occupancy rate
+  int unoccupied_rooms = total_rooms - total_occupied;
+  int occupancy_rate = (total_occupied * 100) / total_rooms;
   
-  cout << "\nTotal number of rooms in the hotel: " << total_rooms << endl;
-  cout << "Number of occupied rooms in the hotel: " << total_occupied_rooms << endl;
-  cout << "Number of unoccupied rooms in the hotel: " << num_unoccupied_rooms << endl;
+  //Dispaying total number of rooms, occupied rooms, unoccupied rooms, and occupancy rate
+  cout << "Total number of rooms in the hotel: " << total_rooms << endl;
+  cout << "Number of occupied rooms in the hotel: " << total_occupied << endl;
+  cout << "Number of unoccupied rooms in the hotel: " << unoccupied_rooms << endl;
   cout << "Occupancy rate: " << occupancy_rate << "%" << endl;
 
   return 0;
